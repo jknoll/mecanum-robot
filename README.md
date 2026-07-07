@@ -141,8 +141,6 @@ fflplay audio/
 ## Bugs/Todos
 Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera2 or some other library.
 
-Keyboard control can be made to work, but the `keyboard` library must be run as root, with the dependencies installed within the root account. Looking at alternatives, or perhaps leapfrogging directly to xbox controller control.
-
 `/audio/*.wav` files are for testing audio playback
 
 ### Bluetooth Controller
