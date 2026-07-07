@@ -1,5 +1,8 @@
+# Large image originals
+*.heic
+
 # Virtualenv
-.mechanum-robot/
+.mecanum-robot/
 
 # Xbox Dependency
 xpadneo
