@@ -40,6 +40,12 @@ class StreamingOutput(io.BufferedIOBase):
 
 
 class StreamingHandler(server.BaseHTTPRequestHandler):
+    # Disable Nagle's algorithm: without this, small writes (each MJPEG
+    # frame is sent as a header + a write) can sit buffered for tens to
+    # hundreds of ms waiting to be coalesced, which is fatal for using the
+    # stream to drive the robot in real time.
+    disable_nagle_algorithm = True
+
     def do_GET(self):
         if self.path == '/':
             self.send_response(301)
@@ -97,9 +103,29 @@ def local_ip():
 
 
 picam2 = Picamera2()
-picam2.configure(picam2.create_video_configuration(main={"size": (640, 480)}))
+picam2.configure(picam2.create_video_configuration(
+    main={"size": (640, 480)},
+    # Let the sensor run as fast as light allows, up to its ~59fps ceiling
+    # at this resolution, instead of the 30fps default -- more frames per
+    # second means each individual frame is less stale by the time it's
+    # captured.
+    controls={"FrameDurationLimits": (16666, 33333)},
+    # Fewer in-flight buffers means less depth in the capture pipeline for
+    # a frame to sit in before it's encoded and sent.
+    buffer_count=4,
+    # queue=True (the default) holds every captured frame for the encoder
+    # so none are dropped, which is right for recording but means the
+    # stream falls further and further behind if the encoder/network can't
+    # keep up. queue=False always encodes/sends the newest frame and drops
+    # the rest, trading completeness for staying close to real time.
+    queue=False,
+))
 output = StreamingOutput()
-picam2.start_recording(JpegEncoder(), FileOutput(output))
+# A lower JPEG quality (picamera2's default is 50) produces smaller frames
+# that take less time to encode and to transfer, at the cost of some image
+# quality -- worth it here since the point is a responsive control feed,
+# not a crisp recording.
+picam2.start_recording(JpegEncoder(q=40), FileOutput(output))
 
 try:
     address = ('', 8000)
