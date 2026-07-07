@@ -155,5 +155,3 @@ Keyboard control can be made to work, but the `keyboard` library must be run as 
 
 ### Initialization of Project and Robot
 [ ] Create an init.sh or .py script which creates the virtualenv, installs the deps, and installs I2C if raspi-config allows a non-interactive way to do so. 
-[ ] Create startup script to put the robot into a default running state so that SSH isn't necessary to start interacting.
-
