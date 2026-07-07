@@ -88,7 +88,7 @@ python3 xbox-controller-test.py
 
 ## Raspberry Pi Development Connection
 
-For Pi Zeros, you can connect locally via Ethernet-over-USB-C. For non-zero Pis, directly connecting via Ethernet cable and then sshing in at `[username]@raspberrypi.local` is the easiest approach I've found. It's possible to then connect via SSH in e.g. Cursor, VS Code, etc. for development.
+For Pi Zeros, you can connect locally via Ethernet-over-USB-C. For non-zero Pis, directly connecting via Ethernet cable and then sshing in at `[username]@raspberrypi.local` is the easiest approach I've found. If the Pi is configured to join your WiFi network, you may be able to skip the Ethernet cable and connect to it via ssh as above over WiFi. It's possible to then connect via SSH in e.g. Cursor, VS Code, etc. for development.
 
 ## Bluetooth Controller Pairing
 See detailed description in ['docs/xbox_controller_setup.md'](xbox_controller_setup.md)
