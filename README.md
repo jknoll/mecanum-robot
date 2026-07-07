@@ -6,7 +6,7 @@ Control system for simple mecanum-wheeled holonomic drive Raspberry Pi based rob
 ## Parts List
 - Raspberry Pi 4B
 - Mini SD Card
-- 2 x Left & Right Mecanum Wheel Pair - 48mm Diameter (TT Motor or Cross Axle (2-pack)) [Adafruit ID:4990]
+- 2 x Left & Right Mecanum Wheel Pair - 48mm Diameter (TT Motor or Cross Axle (2-pack)) [Adafruit ID:4990] (Note that the example image features upgraded wheels salvaged from an RC toy, not the Adafruit model)
 - 1 x Adafruit DC & Stepper Motor Bonnet for Raspberry Pi [Adafruit ID:4280]
 - 4 x DC Gearbox Motor - "TT Motor" - 200RPM - 3 to 6VDC [Adafruit ID:3777]
 - 4xAA battery power pack and 4xAA batteries to power the DC & Stepper Motor Bonnet
