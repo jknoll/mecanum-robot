@@ -148,7 +148,7 @@ Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera
 [x] Bluetooth controller pairing with Pi
 [x] Library and code to output debug bluetooth analog stick position within a control loop.
 [x] Map dpad to quantized translation forward/back/strafe-left/strafe-right.
-[ ] Map second stick (or shoulder buttons?) to rotation.
+[x] Map second stick (or shoulder buttons?) to rotation.
 [ ] Make translation stick accept and drive holonomically (i.e. directions between forward and strafe left).
 
 ### Initialization of Project and Robot
