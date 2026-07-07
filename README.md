@@ -78,7 +78,7 @@ python3 kill.py3
 
 To view webcam (not currently working):
 ```bash
-python3 stream.py3 & # then go to [robot IP address:8000] to view the webcam
+python3 stream.py & # then go to [robot IP address:8000] to view the webcam
 ```
 
 To drive via XBox bluetooth controller (after following the Bluetooth setup instructions below):
