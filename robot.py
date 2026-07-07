@@ -3,8 +3,8 @@ kit = MotorKit()
 from time import sleep
 from pprint import pprint as pp
 
-forward = [1, 1, 1, 1]
-backward = [-1, -1, -1, -1]
+backward = [1, 1, 1, 1]
+forward = [-1, -1, -1, -1]
 clockwise  = [1, 1, -1, -1]
 counterclockwise = [-1, -1, 1, 1]
 right = [-1, 1, -1, 1]

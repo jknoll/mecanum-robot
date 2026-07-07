@@ -96,7 +96,7 @@ def main():
                 stop()
             
             if (x, y) != (0, 0):
-                move(forward=-y, strafe=x)  # Y is inverted
+                move(forward=y, strafe=x)  # Y is inverted
             
             if (rotate_value != 0):
                 move_rotate(rotate)
